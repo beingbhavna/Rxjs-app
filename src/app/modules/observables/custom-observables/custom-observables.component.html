@@ -1,0 +1,45 @@
+<div class="p-3">
+    <h3>Custom Observables</h3>
+    <div class="row ">
+        <div class="col-md-6">
+            <strong class="">Ex-01 (Manual)</strong>
+            <hr>
+            <ul [ngClass]="techStatus=='completed'?'completed':techStatus=='error'?'error':''" class="techList"
+                id="elContainer">
+                <!-- <li class="">HTML</li>
+                <li class="">CSS</li>
+                <li class="">Javascript</li>
+                <li class="">Typescript</li>
+                <li class="">Angular</li>
+                <li class="">Rxjs</li> -->
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <strong class="">Ex-01 (Custom Interval Observables)</strong>
+            <hr>
+            <ul [ngClass]="techStatus2=='completed'?'completed':techStatus2=='error'?'error':''" class="techList"
+                id="elContainer2">
+                <!-- <li class="">HTML</li>
+                <li class="">CSS</li>
+                <li class="">Javascript</li>
+                <li class="">Typescript</li>
+                <li class="">Angular</li>
+                <li class="">Rxjs</li> -->
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <strong class="">Ex-01 (Random Names)</strong>
+            <p class="bg-light border rounded py-2 px-3">
+                <strong class="">Random Name : </strong>'Hello', 'World', 'How', 'Are', 'You'
+            </p>
+        </div>
+    </div>
+    <p class="">
+        Current Name
+        <strong>{{name}}</strong>
+    </p>
+    <span [ngClass]="nameStatus == 'completed'?'bg-success':nameStatus == 'error'?'bg-danger':'bg-primary'"
+        class="badge">{{nameStatus == 'completed'?'Success':nameStatus == 'error'?'Failed':'Running'}}</span>
+</div>

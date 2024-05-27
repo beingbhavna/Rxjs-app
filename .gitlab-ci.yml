@@ -1,0 +1,38 @@
+image: node:alpine
+
+cache:
+  paths:
+  - node_modules/
+
+stages:
+  - install
+  - test
+
+install:
+  stage: install
+  before_script:
+  script:
+    - npm install
+
+# unit-test:
+#   stage: test
+#   before_script:
+#     - apk add --no-cache chromium nss freetype freetype-dev harfbuzz ca-certificates ttf-freefont
+#     - export CHROME_BIN=/usr/bin/chromium-browser
+#   script: 
+#     - npm run test
+
+# e2e-test:
+  image: node:10
+  stage: test
+  before_script:
+    - echo "deb http://dl.google.com/linux/chrome/deb/ stable main" | tee -a /etc/apt/sources.list
+    - wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
+    - apt-get -qq update -y
+    - apt-get -qq install -y --allow-unauthenticated google-chrome-stable xvfb gtk2-engines-pixbuf xfonts-cyrillic xfonts-100dpi xfonts-75dpi xfonts-base xfonts-scalable imagemagick x11-apps default-jre
+    - Xvfb :0 -ac -screen 0 1024x768x24 &
+    - export DISPLAY=:99
+    - npm install
+    - node ./node_modules/protractor/bin/webdriver-manager update
+  script:
+    - npm run e2e --protractorConfig=protractor.conf.js
