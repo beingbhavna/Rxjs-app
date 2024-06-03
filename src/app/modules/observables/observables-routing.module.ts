@@ -40,6 +40,10 @@ const routes: Routes = [
       {
         path: 'pluck',
         loadChildren: () => import('./pluck-operator/pluck-operator.module').then(m => m.PluckOperatorModule),
+      },
+      {
+        path: 'filter',
+        loadChildren: () => import('./filter-operator/filter-operator.module').then(m => m.FilterOperatorModule),
       }
     ]
   }
