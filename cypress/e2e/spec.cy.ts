@@ -44,16 +44,16 @@ describe('template spec', () => {
     mockData.credetials.forEach((e) => {
     cy.get('input[name=username]').type(e.username)
     cy.get('input[name=password]').type(`${e.password}{enter}`)
-    cy.wait(200)
+    // cy.wait(100)
 
     cy.get('#view-admitcard').click()
-    cy.wait(100)
+    // cy.wait(100)
     // cy.get('#examDropdown').select(1).should('have.value', '#examDropdown')
     // cy.get('select').should('be.visible').select('OptionName', {force: true})
     // cy.get('select').select([0, 1]).invoke('val').should('deep.equal', ['Paper I', 'Paper II'])
     for(let i=0;i<=2;i++){
       cy.get('select').select(i)
-      cy.wait(10000)
+      cy.wait(1000)
       console.log(i)
     }
     // cy.get('#view-admitcard').as('closeBtn')
