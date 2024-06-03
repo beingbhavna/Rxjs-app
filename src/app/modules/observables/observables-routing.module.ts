@@ -36,6 +36,10 @@ const routes: Routes = [
       {
         path: 'map-function',
         loadChildren: () => import('./map-function/map-function.module').then(m => m.MapFunctionModule),
+      },
+      {
+        path: 'pluck',
+        loadChildren: () => import('./pluck-operator/pluck-operator.module').then(m => m.PluckOperatorModule),
       }
     ]
   }
