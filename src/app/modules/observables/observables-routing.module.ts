@@ -44,6 +44,10 @@ const routes: Routes = [
       {
         path: 'filter',
         loadChildren: () => import('./filter-operator/filter-operator.module').then(m => m.FilterOperatorModule),
+      },
+      {
+        path: 'tap',
+        loadChildren: () => import('./tap-operator/tap-operator.module').then(m => m.TapOperatorModule),
       }
     ]
   }

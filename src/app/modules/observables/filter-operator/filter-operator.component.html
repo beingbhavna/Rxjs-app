@@ -9,10 +9,14 @@
             </p>
             <table class="table">
                 <tr class="">
+                    <th class="">Id</th>
                     <th class="">Name</th>
+                    <th class="">Gender</th>
                 </tr>
                 <tr class="" *ngFor="let data of dataByLength">
+                    <td class="">{{data.id}}</td>
                     <td class="">{{data.name}}</td>
+                    <td class="">{{data.gender}}</td>
                 </tr>
             </table>
         </div>
