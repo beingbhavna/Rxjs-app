@@ -48,6 +48,10 @@ const routes: Routes = [
       {
         path: 'tap',
         loadChildren: () => import('./tap-operator/tap-operator.module').then(m => m.TapOperatorModule),
+      },
+      {
+        path: 'take',
+        loadChildren: () => import('./take-operator/take-operator.module').then(m => m.TakeOperatorModule),
       }
     ]
   }
