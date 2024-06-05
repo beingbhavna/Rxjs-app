@@ -1,0 +1,39 @@
+<div class="p-3">
+    <h3>Retry, RetryWhen, Scan, Delay Operator</h3>
+    <div class="row ">
+        <div class="col-md-4">
+            <strong class="">Ex-01</strong>
+            <hr>
+            <table class="table" *ngFor="let user of users">
+                <tr class="">
+                    <th class="">Id</th>
+                    <td class="">{{user.id}}</td>
+                </tr>
+                <tr class="">
+                    <th class="">Name</th>
+                    <td class="">{{user.name}}</td>
+                </tr>
+                <tr class="">
+                    <th class="">Email</th>
+                    <td class="">{{user.email}}</td>
+                </tr>
+                <tr class="">
+                    <th class="">Phone</th>
+                    <td class="">{{user.phone}}</td>
+                </tr>
+                <tr class="">
+                    <th class="">Website</th>
+                    <td class="">{{user.website}}</td>
+                </tr>
+            </table>
+            <button class="btn btn-primary" type="button" (click)="fetchData()">
+                <span *ngIf="spinner" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                {{spinner?'Data Fetching...':'Data Fetched'}}
+            </button>
+            <br>
+            <br>
+            <p>Status : <strong
+            [ngClass]="{'text-success':status=='Data Fetched Successfully','text-danger':status=='Error in Fetching Record'}">{{status}}</strong></p>
+        </div>
+    </div>
+</div>

@@ -52,6 +52,10 @@ const routes: Routes = [
       {
         path: 'take',
         loadChildren: () => import('./take-operator/take-operator.module').then(m => m.TakeOperatorModule),
+      },
+      {
+        path: 'retry',
+        loadChildren: () => import('./retry-operator/retry-operator.module').then(m => m.RetryOperatorModule),
       }
     ]
   }
