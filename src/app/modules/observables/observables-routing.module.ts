@@ -56,6 +56,10 @@ const routes: Routes = [
       {
         path: 'retry',
         loadChildren: () => import('./retry-operator/retry-operator.module').then(m => m.RetryOperatorModule),
+      },
+      {
+        path: 'debouncetime',
+        loadChildren: () => import('./debouncetime-operator/debouncetime-operator.module').then(m => m.DebouncetimeOperatorModule),
       }
     ]
   }
