@@ -60,6 +60,10 @@ const routes: Routes = [
       {
         path: 'debouncetime',
         loadChildren: () => import('./debouncetime-operator/debouncetime-operator.module').then(m => m.DebouncetimeOperatorModule),
+      },
+      {
+        path: 'subject',
+        loadChildren: () => import('./subject-operator/subject-operator.module').then(m => m.SubjectOperatorModule),
       }
     ]
   }
