@@ -1,0 +1,46 @@
+<div class="row p-3 justify justify-content-center">
+    <h3 class="">Replay Subject</h3>
+    <hr>
+    <div class="row mb-2" style="text-align: right;">
+        <div class="col">
+            <button class="btn btn-warning" (click)="toggleMethod()">Toggle Method</button>
+        </div>
+    </div>
+    <hr>
+    <div class="row" *ngIf="!toggleInterval">
+        <div class="col-md-3">
+            <input type="text" class="form-control" #video>
+        </div>
+        <div class="col-md-3">
+            <button class="btn btn-success" (click)="addVideo(video)">Add Video</button>
+        </div>
+    </div>
+</div>
+<hr *ngIf="!toggleInterval">
+<div class="row p-3">
+    <div class="col-md-4">
+        <strong class="">User 01</strong>
+        <hr>
+        <ul class="video-list">
+            <li class="" *ngFor="let item of user1"><strong>Video :</strong>{{item}}</li>
+        </ul>
+    </div>
+    <div class="col-md-4">
+        <strong class="">User 02</strong>
+        <hr>
+        <ul class="video-list">
+            <li class="" *ngFor="let item of user2"><strong>Video :</strong>{{item}}</li>
+        </ul>
+        <button class="btn" [ngClass]="user2SubscribeMode?'btn-danger':'btn-success'"
+            (click)="user2Subscribe()">{{user2SubscribeMode? 'Unsubscribe':'Subscribe'}}</button>
+    </div>
+    <div class="col-md-4">
+        <strong class="">User 03</strong>
+        <hr>
+        <ul class="video-list">
+            <li class="" *ngFor="let item of user3"><strong>Video :</strong>{{item}}</li>
+        </ul>
+        <button class="btn" [ngClass]="user3SubscribeMode?'btn-danger':'btn-success'"
+            (click)="user3Subscribe()">{{user3SubscribeMode? 'Unsubscribe':'Subscribe'}}</button>
+    </div>
+</div>

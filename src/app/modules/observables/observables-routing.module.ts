@@ -64,6 +64,10 @@ const routes: Routes = [
       {
         path: 'subject',
         loadChildren: () => import('./subject-operator/subject-operator.module').then(m => m.SubjectOperatorModule),
+      },
+      {
+        path: 'replaysubject',
+        loadChildren: () => import('./replay-subject-operator/replay-subject-operator.module').then(m => m.ReplaySubjectOperatorModule),
       }
     ]
   }
