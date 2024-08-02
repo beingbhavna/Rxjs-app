@@ -1,11 +1,12 @@
 <div class="row p-3 justify justify-content-center">
     <h3 class="">Replay Subject</h3>
     <hr>
-    <div class="row mb-2" style="text-align: right;">
+    <div class="row" style="text-align: right;">
         <div class="col">
             <button class="btn btn-warning" (click)="toggleMethod()">Toggle Method</button>
         </div>
     </div>
+    <div class="col"><strong class="">{{!toggleInterval?'Add Videos':'Interval Start'}}</strong></div>
     <hr>
     <div class="row" *ngIf="!toggleInterval">
         <div class="col-md-3">

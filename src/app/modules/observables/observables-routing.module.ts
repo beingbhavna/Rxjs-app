@@ -68,6 +68,10 @@ const routes: Routes = [
       {
         path: 'replaysubject',
         loadChildren: () => import('./replay-subject-operator/replay-subject-operator.module').then(m => m.ReplaySubjectOperatorModule),
+      },
+      {
+        path: 'async-subject',
+        loadChildren: () => import('./async-subject/async-subject.module').then(m => m.AsyncSubjectModule),
       }
     ]
   }
