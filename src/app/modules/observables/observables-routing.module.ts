@@ -72,6 +72,10 @@ const routes: Routes = [
       {
         path: 'async-subject',
         loadChildren: () => import('./async-subject/async-subject.module').then(m => m.AsyncSubjectModule),
+      },
+      {
+        path: 'concat-merge',
+        loadChildren: () => import('./concat-merge-operator/concat-merge-operator.module').then(m => m.ConcatMergeOperatorModule),
       }
     ]
   }
