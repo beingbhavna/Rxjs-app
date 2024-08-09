@@ -80,6 +80,10 @@ const routes: Routes = [
       {
         path: 'mergeMap',
         loadChildren: () => import('./mergemap-operator/mergemap-operator.module').then(m => m.MergemapOperatorModule),
+      },
+      {
+        path: 'concatMap',
+        loadChildren: () => import('./concatmap-operator/concatmap-operator.module').then(m => m.ConcatmapOperatorModule),
       }
     ]
   }
