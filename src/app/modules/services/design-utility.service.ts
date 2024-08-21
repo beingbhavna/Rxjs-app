@@ -17,4 +17,10 @@ export class DesignUtilityService {
     el.innerText = elvalue;
     document.getElementById(containerId).appendChild(el)
   }
+  print2(elvalue, containerId) {
+    let el = document.createElement('div');
+    el.innerHTML = elvalue;
+    el.setAttribute('class','item');
+    document.getElementById(containerId).prepend(el)
+  }
 }

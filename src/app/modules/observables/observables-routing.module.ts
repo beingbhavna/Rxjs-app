@@ -84,6 +84,10 @@ const routes: Routes = [
       {
         path: 'concatMap',
         loadChildren: () => import('./concatmap-operator/concatmap-operator.module').then(m => m.ConcatmapOperatorModule),
+      },
+      {
+        path: 'concatMap-notification',
+        loadChildren: () => import('./concatmap-notification-operator/concatmap-notification-operator.module').then(m => m.ConcatmapNotificationOperatorModule),
       }
     ]
   }
