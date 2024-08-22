@@ -1,12 +1,13 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { AsyncSubject, BehaviorSubject, ReplaySubject, Subject } from 'rxjs';
+import { AsyncSubject, BehaviorSubject, Observable, ReplaySubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DesignUtilityService {
-
-  constructor() { }
+  url='https://my-json-server.typicode.com/uxtrendz/apis/videoList'
+  constructor(private http:HttpClient) { }
   // userName = new Subject<any>; // did not set default value
   userName = new BehaviorSubject<any>('Bhavna Sharma'); //set default value
   emitVideo = new ReplaySubject<any>(5,5000); //5 is a length of data and 5000 is a timeinterval to subscribe data
@@ -23,4 +24,7 @@ export class DesignUtilityService {
     el.setAttribute('class','item');
     document.getElementById(containerId).prepend(el)
   }
+  getSearch(searchTerm):Observable<any>{
+    return this.http.get<any>(this.url+'?q='+searchTerm)
+    }
 }

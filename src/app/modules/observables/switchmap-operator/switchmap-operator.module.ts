@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { SwitchmapOperatorRoutingModule } from './switchmap-operator-routing.module';
 import { SwitchmapOperatorComponent } from './switchmap-operator.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { SwitchmapOperatorComponent } from './switchmap-operator.component';
   ],
   imports: [
     CommonModule,
-    SwitchmapOperatorRoutingModule
+    SwitchmapOperatorRoutingModule,
+    FormsModule
   ]
 })
 export class SwitchmapOperatorModule { }
