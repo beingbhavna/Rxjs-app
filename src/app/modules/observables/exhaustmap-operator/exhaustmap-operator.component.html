@@ -1,0 +1,21 @@
+<div class="row p-3">
+    <h3 class=""> ExhaustMap</h3>
+    <hr>
+</div>
+<div class="row p-3">
+    <div class="col-md-12">
+        <strong class="">Save Data</strong>
+        <hr>
+        <div class="row">
+            <div class="col-md-6">
+                <button class="btn btn-success" #btn>Save</button>
+            </div>
+            <div class="col-md-6">
+                <ul class="video-list" id="elContainer">
+                    <span class="" *ngIf="fetching"><strong>Saving.....</strong></span>
+                    <li class=""><strong>Save Request : </strong>{{clickCount?.data}} </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+   </div>

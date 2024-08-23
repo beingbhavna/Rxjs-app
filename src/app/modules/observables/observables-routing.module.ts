@@ -92,6 +92,10 @@ const routes: Routes = [
       {
         path: 'switchMap',
         loadChildren: () => import('./switchmap-operator/switchmap-operator.module').then(m => m.SwitchmapOperatorModule),
+      },
+      {
+        path: 'exhaustMap',
+        loadChildren: () => import('./exhaustmap-operator/exhaustmap-operator.module').then(m => m.ExhaustmapOperatorModule),
       }
     ]
   }
