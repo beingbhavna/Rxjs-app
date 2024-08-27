@@ -34,7 +34,7 @@ export class SwitchmapOperatorComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-    const source = from(['Tech', 'Comedy', 'News']).pipe(delay(1000));
+    const source = from(['Tech', 'Comedy', 'News']).pipe(delay(100));
 
     //Ex - 01 (map)
     source.pipe(map(res => this.getData(res))).subscribe(res2 => {

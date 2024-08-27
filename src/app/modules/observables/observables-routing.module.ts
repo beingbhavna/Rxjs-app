@@ -96,6 +96,10 @@ const routes: Routes = [
       {
         path: 'exhaustMap',
         loadChildren: () => import('./exhaustmap-operator/exhaustmap-operator.module').then(m => m.ExhaustmapOperatorModule),
+      },
+      {
+        path: 'share-replay',
+        loadChildren: () => import('./share-replay-operator/share-replay-operator.module').then(m => m.ShareReplayOperatorModule),
       }
     ]
   }
