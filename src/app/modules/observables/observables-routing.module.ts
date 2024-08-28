@@ -100,6 +100,10 @@ const routes: Routes = [
       {
         path: 'share-replay',
         loadChildren: () => import('./share-replay-operator/share-replay-operator.module').then(m => m.ShareReplayOperatorModule),
+      },
+      {
+        path: 'zip-forkjoin',
+        loadChildren: () => import('./zip-forkjoin-operator/zip-forkjoin-operator.module').then(m => m.ZipForkjoinOperatorModule),
       }
     ]
   }
