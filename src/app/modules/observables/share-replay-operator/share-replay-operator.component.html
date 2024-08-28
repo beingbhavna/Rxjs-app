@@ -50,24 +50,20 @@
         </div>
     </div>
 </div>
-<div class="row all-products p-5">
-    <div class="col-md-12">
-        <strong>All Products</strong>
-        <hr>
-        <div class="row">
-            <div class="card" *ngFor="let item of allProducts |async">
-                <img src="" alt="" class="">
-                <div class="card-body">
-                    <small>Id : p2</small>
-                    <h5 class="card-title">{{item.slug}}</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">{{item.name}}</h6>
-                    <p class="card-text">ffffffffffff</p>
-                    <div class="d-flex align-items-center">
-                        <strong>Price : 40000</strong>
-                        <a href={{item.url}} class="btn btn-dark btn-sm ml-auto">Buy Product</a>
-                    </div>
+<strong class=""> All Products</strong>
+<hr>
+<div class="row">
+        <div class="col-md-3 card" *ngFor="let item of allProducts |async">
+            <img src="" alt="" class="">
+            <div class="card-body">
+                <small>Id : p2</small>
+                <h5 class="card-title">{{item.slug}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{item.name}}</h6>
+                <p class="card-text">ffffffffffff</p>
+                <div class="d-flex align-items-center">
+                    <strong>Price : 40000</strong>
+                    <a href={{item.url}} class="btn btn-dark btn-sm ml-auto">Buy Product</a>
                 </div>
             </div>
-        </div>
     </div>
 </div>

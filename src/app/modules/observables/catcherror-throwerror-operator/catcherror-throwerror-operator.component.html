@@ -1,0 +1,27 @@
+<div class="row p-3">
+    <h3 class="">Catch Error Throw Error</h3>
+    <hr>
+    <div *ngIf="error" class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>Error : </strong> {{error}}
+        <button class="close" type="button" data-dismiss="alert" aria-label="close">
+            <span class="" area-hidden="true">&times;</span>
+        </button>
+    </div>
+</div>
+    <strong class=""> All Products</strong>
+    <hr>
+    <div class="row">
+            <div class="col-md-3 card" *ngFor="let item of allProducts ">
+                <img src="" alt="" class="">
+                <div class="card-body">
+                    <small>Id : p2</small>
+                    <h5 class="card-title">{{item.slug}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{item.name}}</h6>
+                    <p class="card-text">ffffffffffff</p>
+                    <div class="d-flex align-items-center">
+                        <strong>Price : 40000</strong>
+                        <a href={{item.url}} class="btn btn-dark btn-sm ml-auto">Buy Product</a>
+                    </div>
+                </div>
+        </div>
+    </div>

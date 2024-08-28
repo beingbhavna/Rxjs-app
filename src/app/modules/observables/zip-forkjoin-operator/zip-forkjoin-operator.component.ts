@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { fromEvent, zip } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { forkJoin, fromEvent, zip } from 'rxjs';
+import { map, take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-zip-forkjoin-operator',
@@ -17,20 +17,24 @@ export class ZipForkjoinOperatorComponent implements OnInit, AfterViewInit {
   constructor() { }
   ngAfterViewInit(): void {
     //observables
-    const nameObs = fromEvent<any>(this.name.nativeElement, 'change').pipe(map(res => res.target.vaue))
-    const colorObs = fromEvent<any>(this.color.nativeElement, 'change').pipe(map(res => res.target.vaue))
+    const nameObs = fromEvent<any>(this.name.nativeElement, 'change').pipe(map(event => event.target.value),take(4));
+    const colorObs = fromEvent<any>(this.color.nativeElement, 'change').pipe(map(event => event.target.value),take(3));
 
     //Ex - 01
-    zip(nameObs, colorObs).subscribe(res => {
-      console.log(res);
-      this.createBox(nameObs, colorObs,'elContainer')
+    zip(nameObs, colorObs).subscribe(([name,color]) => {
+      console.log(name,color);
+      this.createBox(name, color,'elContainer')
+    });
+    forkJoin(nameObs, colorObs).subscribe(([name,color]) => {
+      console.log(name,color);
+      this.createBox(name, color,'elContainer2')
     });
   }
 
   createBox(name, color, containerId) {
     let el = document.createElement('div');
     el.innerText = name;
-    el.setAttribute('class', color);
+    el.setAttribute("class", color);
     document.getElementById(containerId).appendChild(el)
   }
 

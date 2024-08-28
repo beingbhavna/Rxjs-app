@@ -104,6 +104,10 @@ const routes: Routes = [
       {
         path: 'zip-forkjoin',
         loadChildren: () => import('./zip-forkjoin-operator/zip-forkjoin-operator.module').then(m => m.ZipForkjoinOperatorModule),
+      },
+      {
+        path: 'catcherror-throwerror',
+        loadChildren: () => import('./catcherror-throwerror-operator/catcherror-throwerror-operator.module').then(m => m.CatcherrorThrowerrorOperatorModule),
       }
     ]
   }
