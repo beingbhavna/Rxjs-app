@@ -1,16 +1,27 @@
 import { expect } from '@wdio/globals'
-import LoginPage from '../pageobjects/login.page'
-import SecurePage from '../pageobjects/secure.page'
+import WebDriver from 'webdriver'
+import { remote } from 'webdriverio';
+import ListPage from '../pageobjects/login.page'
 
 describe('My Login application', () => {
     it('should login with valid credentials', async () => {
-        await LoginPage.open()
+        const browser = await remote({
+            capabilities: {
+                browserName: 'chrome',
+                'goog:chromeOptions': {
+                    args: process.env.CI ? ['headless', 'disable-gpu'] : []
+                }
+            }
+        })
+        await browser.url('http://localhost:4200/observables')
+        // await ListPage.open()
 
-        await LoginPage.login('tomsmith', 'SuperSecretPassword!')
-        await expect(SecurePage.flashAlert).toBeExisting()
-        await expect(SecurePage.flashAlert).toHaveText(
-            expect.stringContaining('You logged into a secure area!'))
-        await expect(SecurePage.flashAlert).toMatchElementSnapshot('flashAlert')
+        const inputElem = await browser.$('#fromEvent')
+        await inputElem.click();
+        for(let i=0;i<10;i++) {
+            const btnElem = await browser.$('#addBtn')
+            await btnElem.click();
+        }
     })
 })
 
